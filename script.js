@@ -26,16 +26,23 @@ const checkWinner = () => {
     winning_patterns.forEach((pattern) => {
         if (moves[pattern[0]] && (moves[pattern[0]] === moves[pattern[1]]) && (moves[pattern[1]] === moves[pattern[2]])) {
             if (moves[pattern[0]] === 'X') {
-                alert('Player X wins!');
-                reset();
+                setTimeout(() => {
+                    alert('Player X wins!');
+                    reset();
+                }, 500);
             } 
             else if (moves[pattern[0]] === 'O') {
-                alert('Player O wins!');
-                reset();
+                setTimeout(() => {
+                    alert('Player O wins!');
+                    reset();
+                }, 500);
             }
             else{
-                alert('It\'s a draw!');
-                reset();
+                setTimeout(() => {
+                    alert("It's a draw!");
+                    reset();
+                }, 500);
+                
             }
         }
     });
@@ -55,6 +62,7 @@ boxes.forEach((box) =>{
             turn0 = true;
         }
         box.style.pointerEvents = 'none';
+        setTimeout(() => {}, 500);
         checkWinner();
     })
 })
